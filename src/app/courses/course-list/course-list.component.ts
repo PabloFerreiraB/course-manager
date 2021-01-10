@@ -6,16 +6,32 @@ import { Course } from './course';
 @Component({
   selector: 'app-course-list',
   templateUrl: './course-list.component.html',
-  styleUrls: ['./course-list.component.css']
+  styleUrls: ['./course-list.component.css'],
 })
 export class CourseListComponent implements OnInit {
-
-  courses: Course[] = [];
+  filteredCourses: Course[] = [];
+  _courses: Course[] = [];
+  _filterBy!: string;
 
   constructor(private courseService: CourseService) {}
 
   ngOnInit(): void {
-    this.courses = this.courseService.getAll();
+    this._courses = this.courseService.getAll();
+    this.filteredCourses = this._courses;
   }
 
+  get filter() {
+    return this._filterBy;
+  }
+
+  set filter(value: string) {
+    this._filterBy = value;
+
+    this.filteredCourses = this._courses.filter(
+      (course: Course) =>
+        course.name
+          .toLocaleLowerCase()
+          .indexOf(this._filterBy.toLocaleLowerCase()) > -1
+    );
+  }
 }

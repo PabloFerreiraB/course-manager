@@ -1,20 +1,15 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { CourseListComponent } from './courses/course-list/course-list.component';
 import { StarComponent } from './stars/star/star.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    CourseListComponent,
-    StarComponent
-  ],
-  imports: [
-    BrowserModule
-  ],
+  declarations: [AppComponent, CourseListComponent, StarComponent],
+  imports: [BrowserModule, FormsModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
