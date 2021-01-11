@@ -19,12 +19,12 @@ import { PipeModule } from '../shared/pipes/pipe.module';
     PipeModule,
     RouterModule.forChild([
       {
-        path: 'courses/info/:id',
-        component: CourseInfoComponent,
-      },
-      {
         path: 'courses',
         component: CourseListComponent,
+      },
+      {
+        path: 'courses/info/:id',
+        component: CourseInfoComponent,
       },
     ]),
   ],

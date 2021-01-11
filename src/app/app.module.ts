@@ -7,10 +7,9 @@ import { CourseModule } from './courses/course.module';
 import { CoreModule } from './core/core.module';
 
 import { AppComponent } from './app.component';
-import { Error404Component } from './error404/error404.component';
 
 @NgModule({
-  declarations: [AppComponent, Error404Component],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     HttpClientModule,
@@ -21,10 +20,6 @@ import { Error404Component } from './error404/error404.component';
         path: '',
         redirectTo: 'courses',
         pathMatch: 'full',
-      },
-      {
-        path: '**',
-        component: Error404Component,
       },
     ]),
   ],
