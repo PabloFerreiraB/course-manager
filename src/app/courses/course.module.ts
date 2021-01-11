@@ -8,7 +8,7 @@ import { StarModule } from '../shared/components/star/star.module';
 import { CourseListComponent } from './course-list/course-list.component';
 import { CourseInfoComponent } from './course-info/course-info.component';
 
-import { PipeModule } from '../shared/pipes/pipe/pipe.module';
+import { PipeModule } from '../shared/pipes/pipe.module';
 
 @NgModule({
   declarations: [CourseListComponent, CourseInfoComponent],
